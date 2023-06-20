@@ -2,7 +2,8 @@ from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
-import time
+
+WIN_SCORE = 2
 
 screen = Screen()
 screen.setup(height=600,width=800)
@@ -43,13 +44,11 @@ while gaming:
         score2.point()
         ball.reset_ball()
 
-    if score1.score == 5:
-        score1.setpos(0,-150)
-        score1.write("   Mavi\nKazandı!",False,"center",("Comic Sans MS",90,"normal"))
+    if score1.score == WIN_SCORE:
+        score1.winner_blue()
         gaming = False
-    elif score2.score == 5:
-        score2.setpos(0,-150)
-        score2.write(" Kırmızı\nKazandı!",False,"center",("Comic Sans MS",90,"normal"))
+    elif score2.score == WIN_SCORE:
+        score2.winner_red()
         gaming = False
 
     screen.update()
