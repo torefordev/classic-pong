@@ -43,6 +43,15 @@ while gaming:
         score2.point()
         ball.reset_ball()
 
+    if score1.score == 5:
+        score1.setpos(0,-150)
+        score1.write("   Mavi\nKazandı!",False,"center",("Comic Sans MS",90,"normal"))
+        gaming = False
+    elif score2.score == 5:
+        score2.setpos(0,-150)
+        score2.write(" Kırmızı\nKazandı!",False,"center",("Comic Sans MS",90,"normal"))
+        gaming = False
+
     screen.update()
 
 screen.exitonclick()
